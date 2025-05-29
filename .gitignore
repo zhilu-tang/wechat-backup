@@ -1,0 +1,10 @@
+.idea/
+.git/
+__pycache__/
+directory_tree.txt
+*.db
+build/
+dist/
+*.spec
+release/*
+*.tar.gz
