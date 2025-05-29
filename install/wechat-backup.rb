@@ -19,27 +19,7 @@ class WechatBackup < Formula
     end
 
     # 创建 launchd 配置文件
-    (prefix/"com.zhilu.tang.wechat-backup.plist").write <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>Label</key>
-        <string>com.zhilu.tang.wechat-backup</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{bin}/wechat-backup</string>
-          <string>--service</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>StandardOutPath</key>
-        <string>/tmp/wechat-backup.log</string>
-        <key>StandardErrorPath</key>
-        <string>/tmp/wechat-backup.log</string>
-      </dict>
-      </plist>
-    EOS
+    (bin/"homebrew.mxcl.wechat-backup.plist").write plist
   end
 
   def caveats
